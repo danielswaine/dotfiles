@@ -22,10 +22,15 @@
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
+    showInvisibles: true
+    tabType: "soft"
   "exception-reporting":
     userId: "0201a1e5-0a2d-4f8b-8864-c110891fa304"
   "markdown-preview":
     useGitHubStyle: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   pigments: {}
   welcome:
     showOnStartup: false
