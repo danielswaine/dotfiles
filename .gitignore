@@ -1,0 +1,18 @@
+# .gitignore for dotfiles repo
+# Global .gitignore settings, see ~/.globalgitignore.
+
+# Default to ignoring everything.
+*
+
+# Explicitly track these files.
+!README.md
+!.bash_profile
+!.bashrc
+!.git-prompt.sh
+!.gitconfig
+!.gitignore
+!.globalgitignore
+!.profile
+
+!.atom/
+!.atom/**
