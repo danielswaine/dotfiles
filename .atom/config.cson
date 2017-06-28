@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "78ff9ab4-b69e-4098-bba9-158d55b286c8"
   "autoclose-html":
     forceBlock: [
       "head"
@@ -28,6 +31,9 @@
     tabType: "soft"
   "exception-reporting":
     userId: "0201a1e5-0a2d-4f8b-8864-c110891fa304"
+  jslint:
+    validateOnChange: true
+  "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
   "package-sync":

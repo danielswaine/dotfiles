@@ -11,3 +11,7 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
 export GREP_OPTIONS="--color=auto"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+if [ -f "$HOME/.secrets" ]; then
+    . "$HOME/.secrets"
+fi
