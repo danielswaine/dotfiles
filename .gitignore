@@ -13,6 +13,7 @@
 !.gitignore
 !.globalgitignore
 !.profile
+!.irbrc
 
 !.atom/
 !.atom/**
