@@ -2,8 +2,8 @@
 [[ $- == *i* ]] || return 0
 
 # Load bits
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 eval "$(rbenv init -)"
+
 export PATH=/usr/local/bin:$PATH
 
 
@@ -94,8 +94,9 @@ custom_prompt() {
 # For fun
 random=$(echo $((RANDOM%2)))
 if [[ $random -eq 0 ]]; then
-  if which fortune cowsay lolcat &> /dev/null; then
-      fortune -s | cowsay -f tux | lolcat -F 0.5
+  if which fortune boxes lolcat &> /dev/null; then
+      echo
+      fortune | boxes -d simple -p a1l3r3 | lolcat
       echo
   fi
 else
