@@ -17,3 +17,7 @@
 
 !.atom/
 !.atom/**
+
+!.config
+!.config/nvim
+!.config/nvim/**
