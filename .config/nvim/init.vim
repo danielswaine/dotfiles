@@ -29,7 +29,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-	Plug 'Shougo/echodoc.vim'
+  Plug 'Shougo/echodoc.vim'
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'zchee/deoplete-jedi'
   Plug 'ap/vim-css-color'
