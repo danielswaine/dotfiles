@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " Enable Deoplete
