@@ -14,6 +14,7 @@
 !.globalgitignore
 !.profile
 !.irbrc
+!.tmux.conf
 
 !.atom/
 !.atom/**
