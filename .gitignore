@@ -18,6 +18,8 @@
 
 !.config
 !.config/nvim
+!.config/nvim/autoload/
 !.config/nvim/autoload/plug.vim
 !.config/nvim/init.vim
+!.config/nvim/UltiSnips/
 !.config/nvim/UltiSnips/**
