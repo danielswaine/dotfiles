@@ -16,9 +16,8 @@
 !.irbrc
 !.tmux.conf
 
-!.atom/
-!.atom/**
-
 !.config
 !.config/nvim
+!.config/nvim/autoload/plug.vim
 !.config/nvim/init.vim
+!.config/nvim/UltiSnips/**

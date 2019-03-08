@@ -16,10 +16,11 @@ set cc=80                   " set an 80 column border for good coding style
 set cursorline
 set splitbelow splitright
 set spell spelllang=en_gb
+set cmdheight=2
 syntax on
 
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'w0rp/ale'
   Plug 'morhetz/gruvbox'
@@ -33,10 +34,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'zchee/deoplete-jedi'
   Plug 'ap/vim-css-color'
-  Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-vinegar'
   Plug 'tpope/vim-surround'
+  Plug 'SirVer/ultisnips'
 call plug#end()
 
 " Enable Deoplete
@@ -44,8 +45,8 @@ let g:echodoc#enable_at_startup = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 " Use tab for autocompletion.
-" inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 
 " File Explorer Settings
 let g:netrw_banner = 0
@@ -57,6 +58,15 @@ colorscheme gruvbox
 
 " Modify Spell Highlight Colours
 hi SpellBad ctermbg=red ctermfg=white 
+
+" Ultisnips
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger = '<Right>'
+let g:UltiSnipsJumpForwardTrigger = '<Down>'
+let g:UltiSnipsJumpBackwardTrigger ='<Up>'
+" let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips']
+call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 "------------------------------------------------------------------------------
 " Normal mode
@@ -72,12 +82,9 @@ noremap <Right> gt
 
 " Manually enable linters.
 let g:ale_linters = {
-    \ 'css': ['stylelint'],
     \ 'html': ['htmlhint'],
     \ 'markdown': ['mdl'],
     \ 'javascript': ['standard'],
-    \ 'json': ['jsonlint'],
-    \ 'python': ['pylint', 'flake8'],
     \ 'scss': ['sasslint'],
     \ 'vim': ['vint'],
     \ 'ruby': ['rubocop'],
