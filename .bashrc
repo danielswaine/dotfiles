@@ -92,24 +92,13 @@ custom_prompt() {
 
 
 # For fun
-random=$(echo $((RANDOM%2)))
-if [[ $random -eq 0 ]]; then
-  if which fortune boxes lolcat &> /dev/null; then
-      echo
-      fortune | boxes -d simple -p a1l3r3 | lolcat
-      echo
-  fi
-else
-  if which figlet lolcat &> /dev/null; then
-      hour=$(date +"%H")
-      if [ $hour -ge 0 -a $hour -lt 12 ]; then
-        greeting="good morning"
-      elif [ $hour -ge 12 -a $hour -lt 18 ]; then
-        greeting="good afternoon"
-      else
-        greeting="good evening"
-      fi
-      figlet -f ogre -w 150 $greeting $USER | lolcat -F 0.5
-      echo
-  fi
+if which fortune boxes lolcat &> /dev/null; then
+    echo
+    fortune -s | boxes -d simple -p a1l3r3 | lolcat -F 0.5
+    echo
 fi
+
+# if which figlet lolcat boxes &> /dev/null; then
+    # figlet -f ogre -w 150 "hello" $USER | boxes -d simple -p a1l3r3
+    # echo
+# fi
