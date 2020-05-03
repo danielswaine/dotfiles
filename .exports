@@ -6,3 +6,7 @@ export HISTSIZE=500  # Maximum number of commands to remember from one session.
 
 # Enable colour for 'grep' output
 export GREP_OPTIONS="--color=auto"
+
+# macOS Catalina uses a new shell - zsh
+# Remove warning that tells you to update
+export BASH_SILENCE_DEPRECATION_WARNING=1
