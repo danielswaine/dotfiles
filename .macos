@@ -182,7 +182,7 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 ###############################################################################
 
 # Install the Solarized Dark theme for iTerm
-open "${HOME}/resources/Solarized Dark.itermcolors"
+open "${HOME}/resources/SolarizedDark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
