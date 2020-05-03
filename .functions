@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Open man page as PDF
+function manpdf() {
+  man -t "${1}" | open -f -a /Applications/Preview.app/
+}
+
+# Create a new directory and enter it
+function mk() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# Change into the top-most Finder window's location
+function cdf() { # short for `cdfinder`
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
+
+# With no arguments opens the current directory in Atom, otherwise
+# opens the given location
+function a() {
+  if [ $# -eq 0 ]; then
+    atom .
+  else
+    atom "$@"
+  fi
+}

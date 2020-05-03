@@ -12,9 +12,15 @@
 !.gitconfig
 !.gitignore
 !.globalgitignore
-!.profile
 !.irbrc
 !.tmux.conf
+!.aliases
+!.bash_prompt
+!.exports
+!.functions
+!.hushlogin
+!.macos
+!install.sh
 
 !.config
 !.config/nvim
@@ -23,3 +29,6 @@
 !.config/nvim/init.vim
 !.config/nvim/UltiSnips/
 !.config/nvim/UltiSnips/*.snippets
+
+!resources
+!resources/SolarizedDark.itermcolors

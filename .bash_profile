@@ -1,9 +1,6 @@
-# Load .profile and .bashrc
+#!/usr/bin/env bash
 
-if [ -f "$HOME/.profile" ]; then
-    . "$HOME/.profile"
-fi
-
-if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-fi
+for file in ~/.{bashrc,bash_prompt,aliases,functions,secrets,extras}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;

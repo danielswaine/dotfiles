@@ -1,7 +1,3 @@
-[user]
-  name = Daniel Swaine
-  email = info@danielswaine.co.uk
-
 [core]
   excludesfile = ~/.globalgitignore
   editor = atom
