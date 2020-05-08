@@ -43,7 +43,7 @@ call plug#end()
 " Enable Deoplete
 let g:echodoc#enable_at_startup = 1
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option('smart_case', v:true)
 " Use tab for autocompletion.
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
@@ -89,7 +89,6 @@ let g:ale_linters = {
     \ 'vim': ['vint'],
     \ 'ruby': ['rubocop'],
     \ 'bash': ['shellcheck'],
-    \ 'php': ['php'],
 \ }
 
 " Always keep the gutter open.
