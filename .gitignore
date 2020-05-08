@@ -14,7 +14,7 @@
 !.globalgitignore
 !.irbrc
 !.tmux.conf
-!.eslintrc
+!.eslintrc.yml
 !.aliases
 !.bash_prompt
 !.exports
