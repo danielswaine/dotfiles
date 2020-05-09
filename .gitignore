@@ -17,6 +17,7 @@
 !.eslintrc.yml
 !.aliases
 !.bash_prompt
+!.tern-config
 !.exports
 !.functions
 !.hushlogin

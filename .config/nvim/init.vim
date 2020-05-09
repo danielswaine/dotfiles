@@ -48,6 +48,15 @@ call deoplete#custom#option('smart_case', v:true)
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
+
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['buffer', 'file', 'ternjs']
+
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
 " File Explorer Settings
 let g:netrw_banner = 0
 
