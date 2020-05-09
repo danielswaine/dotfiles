@@ -15,6 +15,7 @@
 !.irbrc
 !.tmux.conf
 !.eslintrc.yml
+!.sass-lint.yml
 !.aliases
 !.bash_prompt
 !.tern-config
