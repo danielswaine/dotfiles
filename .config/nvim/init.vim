@@ -86,7 +86,6 @@ let g:ale_linters = {
     \ 'markdown': ['mdl'],
     \ 'javascript': ['standard'],
     \ 'scss': ['sasslint'],
-    \ 'vim': ['vint'],
     \ 'ruby': ['rubocop'],
     \ 'bash': ['shellcheck'],
 \ }
