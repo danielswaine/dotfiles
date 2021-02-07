@@ -1,6 +1,19 @@
 # Look no further than this configuration file.
 root: true
 
+# Parser configuration.
+# parser: babel-eslint
+parserOptions:
+  ecmaFeatures:
+    globalReturn: false
+    impliedStrict: true
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
+# plugins:
+  # - react
+  # - babel
+
 # Global variable provision.
 env:
   amd: false
@@ -33,7 +46,7 @@ env:
 rules:
   # Possible errors.
   comma-dangle:
-    - error
+    - warn
     - always-multiline
   no-cond-assign:
     - error
@@ -235,8 +248,8 @@ rules:
         let: 1
         const: 2
   jsx-quotes:
-    - warn  # Don't plan on using JSX.
-    - prefer-double
+    - error
+    - prefer-single
   key-spacing:
     - error
     - beforeColon: false
@@ -371,7 +384,8 @@ rules:
   space-before-function-paren:
     - error
     - anonymous: always
-      named: never
+      named: always
+      asyncArrow: always
   space-in-parens:
     - error
     - never

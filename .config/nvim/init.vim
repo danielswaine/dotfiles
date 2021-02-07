@@ -10,7 +10,7 @@ set hlsearch                " highlight search results
 set shiftround shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 set autoindent              " indent a new line the same amount as the line just typed
 set smartindent
-set number                  " add line numbers
+set relativenumber          " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
 set cursorline
@@ -38,21 +38,28 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-vinegar'
   Plug 'tpope/vim-surround'
   Plug 'SirVer/ultisnips'
+  Plug 'othree/jspc.vim'
 call plug#end()
 
 " Enable Deoplete
+set completeopt-=preview
 let g:echodoc#enable_at_startup = 1
 let g:deoplete#enable_at_startup = 1
+let g:tern_show_signature_in_pum = '0'
 call deoplete#custom#option('smart_case', v:true)
+call deoplete#custom#option('num_processes', 4)
+
 " Use tab for autocompletion.
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = ['tern#Complete', 'jspc#omni']
+call deoplete#custom#option('sources', {
+  \   'javascript.jsx': ['buffer', 'file', 'ternjs']
+  \ })
 
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['buffer', 'file', 'ternjs']
+call deoplete#custom#source('omni', 'functions', {
+  \   'javascript': ['tern#Complete', 'jspc#omni']
+  \ })
 
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
@@ -66,7 +73,7 @@ let g:gruvbox_italic = 1
 colorscheme gruvbox
 
 " Modify Spell Highlight Colours
-hi SpellBad ctermbg=red ctermfg=white 
+hi SpellBad ctermbg=red ctermfg=white
 
 " Ultisnips
 let g:UltiSnipsEditSplit = 'vertical'
@@ -105,6 +112,9 @@ let g:ale_sign_column_always = 1
 " Customise gutter indicators.
 let g:ale_sign_error = 'E'
 let g:ale_sign_warning = 'W'
+
+" The source of the message
+let g:ale_echo_msg_format = '%linter%: %s'
 
 " Add mappings for jumping between errors.
 nmap <silent> [<lt> <Plug>(ale_previous_wrap)
