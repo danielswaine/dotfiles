@@ -24,6 +24,7 @@
 !.hushlogin
 !.macos
 !install.sh
+!.hyper.js
 
 !.config
 !.config/nvim
